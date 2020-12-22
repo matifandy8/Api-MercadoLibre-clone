@@ -1,7 +1,7 @@
 const http = require("http");
 const express = require("express");
 const cors = require("cors");
-const importData = require("./products.json");
+const Products = require("./products.json");
 const app = express();
 
 app.use(cors());
@@ -9,7 +9,16 @@ app.use(cors());
 app.set("json spaces", 2);
 
 app.get("/products", (req, res) => {
-  res.send(importData);
+  res.send(Products);
+});
+
+app.get("/products/:id", (req, res) => {
+  const product = Products.find((x) => x._id === req.params.id);
+  if (product) {
+    res.send(product);
+  } else {
+    res.status(404).send({ message: "Product not Found" });
+  }
 });
 
 app.get("/", function (req, res) {
