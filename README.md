@@ -1,5 +1,7 @@
 # Api-MercadoLibre-clone
 
-Server ot backend the mercado libre fake
+Backend of the mercado libre fake 
 
-last commit in the main branch
+- you should download the server or git clone.
+- npm start
+- Now you can see the complete application with backend in this url:https://mercadolibrefake.herokuapp.com/
